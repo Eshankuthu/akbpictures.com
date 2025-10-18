@@ -1,91 +1,272 @@
-# Magic Portfolio
+# 🎬 AKB Pictures - Movie Portfolio Website
 
-Magic Portfolio is a simple, clean, beginner-friendly portfolio template. It supports an MDX-based content system for projects and blog posts, an about / CV page and a gallery.
+A stunning, modern movie production portfolio website built from scratch with Next.js 15, React 19, Tailwind CSS, and Framer Motion.
 
-View the demo [here](https://demo.magic-portfolio.com).
+## ✨ Features
 
-![Magic Portfolio](public/images/og/home.jpg)
+### 🎥 **Sliding Movie Carousel**
+- Full-screen cinematic hero slider
+- Smooth transitions with Framer Motion
+- Arrow navigation and dot indicators
+- Auto-playing with manual controls
+- Displays movie title, year, director, category, and description
+- "Watch Trailer" and "Learn More" CTAs
 
-## Getting started
+### 📖 **About Section**
+- Company overview and mission statement
+- Stats showcase (150+ Films, 45 Awards, 200+ Team Members, 15+ Years)
+- Services breakdown (Pre-Production, Production, Post-Production)
+- Animated scroll-based reveals
+- Professional team quote/mission statement
 
-**1. Clone the repository**
-```
-git clone https://github.com/once-ui-system/magic-portfolio.git
-```
+### 📬 **Contact Form**
+- Full-featured contact form with validation
+- Name, Email, Subject dropdown, and Message fields
+- Success/error state handling
+- Contact information display (Email, Phone, Location)
+- Social media links
+- Responsive two-column layout
 
-**2. Install dependencies**
-```
+### 🎨 **Design Highlights**
+- **Dark cinematic theme** with amber/gold accents
+- **Responsive design** - mobile, tablet, and desktop optimized
+- **Smooth animations** powered by Framer Motion
+- **Custom scrollbar** with amber accent
+- **Glassmorphism effects** on navigation and buttons
+- **Gradient overlays** for depth and readability
+
+---
+
+## 🚀 Getting Started
+
+### Installation
+
+```bash
 npm install
 ```
 
-**3. Run dev server**
-```
+### Development Server
+
+```bash
 npm run dev
 ```
 
-**4. Edit config**
-```
-src/resources/once-ui.config.js
-```
+Visit [http://localhost:3000](http://localhost:3000)
 
-**5. Edit content**
-```
-src/resources/content.js
-```
+### Build for Production
 
-**6. Create blog posts / projects**
-```
-Add a new .mdx file to src/app/blog/posts or src/app/work/projects
+```bash
+npm run build
+npm start
 ```
 
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+---
 
-## Documentation
+## 📁 Project Structure
 
-Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
+```
+akbpictures.com/
+├── app/
+│   ├── layout.tsx          # Root layout with metadata
+│   ├── page.tsx            # Homepage (combines all sections)
+│   └── globals.css         # Global styles and Tailwind directives
+├── components/
+│   ├── MovieCarousel.tsx   # Hero slider with movie showcase
+│   ├── About.tsx           # Company info, stats, and services
+│   ├── Contact.tsx         # Contact form and info
+│   ├── Navigation.tsx      # Sticky header with smooth scroll
+│   └── Footer.tsx          # Footer with copyright
+├── data/
+│   └── movies.ts           # Movie data (8 sample films)
+├── tailwind.config.ts      # Tailwind configuration
+├── tsconfig.json           # TypeScript config
+└── package.json            # Dependencies
+```
 
-## Features
+---
 
-### Once UI
-- All tokens, components & features of [Once UI](https://once-ui.com)
+## 🎨 Tech Stack
 
-### SEO
-- Automatic open-graph and X image generation with next/og
-- Automatic schema and metadata generation based on the content file
+- **Framework**: Next.js 15.5.6
+- **React**: 19.0.0
+- **TypeScript**: 5.7.2
+- **Styling**: Tailwind CSS 3.4.17
+- **Animations**: Framer Motion 11.15.0
+- **Icons**: React Icons 5.5.0
 
-### Design
-- Responsive layout optimized for all screen sizes
-- Timeless design without heavy animations and motion
-- Endless customization options through [data attributes](https://once-ui.com/docs/theming)
+---
 
-### Content
-- Render sections conditionally based on the content file
-- Enable or disable pages for blog, work, gallery and about / CV
-- Generate and display social links automatically
-- Set up password protection for URLs
+## 🎬 Movie Data
 
-### Localization
-- A localized, earlier version of Magic Portfolio is available with the next-intl library
-- To use localization, switch to the 'i18n' branch
+The website showcases **8 sample movies** with the following details:
+- Title
+- Year
+- Category (Feature Film, Sci-Fi Short, Documentary, etc.)
+- Director name
+- High-quality thumbnail image (via Unsplash)
+- Description
 
-## Creators
+Edit `/data/movies.ts` to add your own films!
 
-Lorant One: [Threads](https://www.threads.net/@lorant.one) / [LinkedIn](https://www.linkedin.com/in/lorant-one/)
+---
 
-## Get involved
+## 🎨 Color Palette
 
-- Join the Design Engineers Club on [Discord](https://discord.com/invite/5EyAQ4eNdS) and share your project with us!
-- Deployed your docs? Share it on the [Once UI Hub](https://once-ui.com/hub) too! We feature our favorite apps on our landing page.
+```css
+Primary Background: #0a0a0a (Near Black)
+Secondary Background: #171717 (Neutral 950)
+Card Background: #262626 (Neutral 900)
 
-## License
+Primary Accent: #f59e0b (Amber 500)
+Hover Accent: #fbbf24 (Amber 400)
 
-Distributed under the CC BY-NC 4.0 License.
-- Attribution is required.
-- Commercial usage is not allowed.
-- You can extend the license to [Dopler CC](https://dopler.app/license) by purchasing a [Once UI Pro](https://once-ui.com/pricing) license.
+Text Primary: #fafafa (White)
+Text Secondary: #d4d4d4 (Gray 300)
+Text Muted: #a3a3a3 (Gray 400)
+```
 
-See `LICENSE.txt` for more information.
+---
 
-## Deploy with Vercel
+## 📱 Responsive Breakpoints
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&project-name=portfolio&repository-name=portfolio&redirect-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&demo-title=Magic%20Portfolio&demo-description=Showcase%20your%20designers%20or%20developer%20portfolio&demo-url=https%3A%2F%2Fdemo.magic-portfolio.com&demo-image=%2F%2Fraw.githubusercontent.com%2Fonce-ui-system%2Fmagic-portfolio%2Fmain%2Fpublic%2Fimages%2Fog%2Fhome.jpg)
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
+
+All components are fully responsive with mobile-first design.
+
+---
+
+## 🎞️ Component Features
+
+### MovieCarousel
+- Full-screen cinematic display
+- Framer Motion page transitions
+- Navigation arrows (left/right)
+- Dot indicators for quick navigation
+- Animated scroll indicator
+- Gradient overlays for text readability
+
+### About
+- Scroll-triggered animations
+- Icon-based stats with numbers
+- Service cards with hover effects
+- Blockquote styling for mission statement
+
+### Contact
+- Form validation (required fields)
+- Subject dropdown (Film, Commercial, Music Video, Other)
+- Submit animation
+- Success/error feedback
+- Contact info cards with icons
+- Social media placeholder links
+
+### Navigation
+- Sticky header with backdrop blur
+- Smooth scroll to sections
+- Mobile hamburger menu with slide-in animation
+- Active state detection
+- "Let's Talk" CTA button
+
+---
+
+## 🔧 Customization
+
+### Add Your Movies
+
+Edit `/data/movies.ts`:
+
+```typescript
+export const movies: Movie[] = [
+  {
+    id: 1,
+    title: "Your Movie Title",
+    year: "2024",
+    category: "Feature Film",
+    director: "Your Name",
+    thumbnail: "/path/to/image.jpg",
+    description: "Movie description here...",
+  },
+  // Add more movies...
+];
+```
+
+### Change Colors
+
+Edit `tailwind.config.ts` or `/app/globals.css`:
+
+```css
+:root {
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+}
+```
+
+### Update Contact Info
+
+Edit `/components/Contact.tsx` - lines with email, phone, and address.
+
+---
+
+## 📦 Dependencies
+
+```json
+{
+  "next": "^15.1.0",
+  "react": "^19.0.0",
+  "react-dom": "^19.0.0",
+  "framer-motion": "^11.15.0",
+  "react-icons": "^5.5.0",
+  "tailwindcss": "^3.4.17"
+}
+```
+
+---
+
+## 🌐 Deployment
+
+### Deploy to Vercel
+
+```bash
+vercel
+```
+
+Or connect your GitHub repository to Vercel for automatic deployments.
+
+### Environment Variables
+
+No environment variables required for basic setup.
+
+---
+
+## 📄 License
+
+This project is open source and available for personal and commercial use.
+
+---
+
+## 🎯 Features Roadmap
+
+- [ ] Movie detail pages
+- [ ] Video player integration
+- [ ] Blog/news section
+- [ ] Team member profiles
+- [ ] Client testimonials
+- [ ] Awards gallery
+- [ ] Behind-the-scenes photo gallery
+
+---
+
+## 🤝 Contributing
+
+Feel free to fork, customize, and use this template for your own production house or portfolio!
+
+---
+
+## 📞 Support
+
+For questions or issues, contact: **hello@akbpictures.com**
+
+---
+
+**Built with ❤️ for filmmakers and storytellers**
