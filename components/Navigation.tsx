@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 import Image from "next/image";
@@ -14,6 +15,8 @@ const navLinks = [
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,10 +28,25 @@ export default function Navigation() {
   }, []);
 
   const scrollToSection = (href: string) => {
+    setIsMobileMenuOpen(false);
+    
+    // If we're not on the homepage, navigate there first
+    if (pathname !== "/") {
+      router.push(`/${href}`);
+      // Scroll after navigation completes
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+      return;
+    }
+
+    // If we're on the homepage, scroll to the section
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
     }
   };
 
@@ -38,10 +56,10 @@ export default function Navigation() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
           isScrolled
-            ? "bg-black/90 backdrop-blur-md border-b border-white/10"
-            : "bg-transparent"
+            ? "bg-black/95 backdrop-blur-md border-black/40 shadow-lg"
+            : "bg-black/70 backdrop-blur-sm border-black/30"
         }`}
       >
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
@@ -58,9 +76,9 @@ export default function Navigation() {
               <Image
                 src="/images/logo.png"
                 alt="AKB Pictures"
-                width={60}
-                height={48}
-                className="h-12 w-auto md:h-16 object-contain"
+                width={80}
+                height={64}
+                className="h-16 w-auto md:h-20 object-contain"
                 priority
               />
             </a>
@@ -127,9 +145,9 @@ export default function Navigation() {
               <Image
                 src="/images/logo.png"
                 alt="AKB Pictures"
-                width={80}
-                height={64}
-                className="h-20 w-auto object-contain"
+                width={100}
+                height={80}
+                className="h-24 w-auto object-contain"
               />
             </motion.div>
             {navLinks.map((link, index) => (

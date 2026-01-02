@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { Movie } from "@/data/movies";
-import { FiChevronLeft, FiChevronRight, FiPlay } from "react-icons/fi";
+import { FiChevronLeft, FiChevronRight, FiPlay, FiInstagram } from "react-icons/fi";
+import { FaTiktok } from "react-icons/fa";
 
 interface MovieCarouselProps {
   movies: Movie[];
@@ -94,7 +96,7 @@ export default function MovieCarousel({ movies }: MovieCarouselProps) {
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.6, duration: 0.6 }}
-                  className="flex flex-wrap gap-4"
+                  className="flex flex-wrap gap-4 items-center"
                 >
                   {currentMovie.trailerUrl && (
                     <a
@@ -107,17 +109,52 @@ export default function MovieCarousel({ movies }: MovieCarouselProps) {
                       Watch Trailer
                     </a>
                   )}
-                  <button
-                    onClick={() => {
-                      const element = document.querySelector('#about');
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
-                    className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg backdrop-blur-sm border border-white/20 transition-all"
-                  >
-                    Learn More
-                  </button>
+                  {currentMovie.title === "Viral Gorkhe" ? (
+                    <Link
+                      href="/viral-gorkhe"
+                      className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg backdrop-blur-sm border border-white/20 transition-all inline-block"
+                    >
+                      Learn More
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={() => {
+                        const element = document.querySelector('#about');
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                      className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg backdrop-blur-sm border border-white/20 transition-all"
+                    >
+                      Learn More
+                    </button>
+                  )}
+                  {(currentMovie.tiktokUrl || currentMovie.instagramUrl) && (
+                    <div className="flex gap-3 ml-2">
+                      {currentMovie.tiktokUrl && (
+                        <a
+                          href={currentMovie.tiktokUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-12 h-12 flex items-center justify-center bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full border border-white/20 transition-all transform hover:scale-110"
+                          aria-label="Follow on TikTok"
+                        >
+                          <FaTiktok className="w-5 h-5 text-white" />
+                        </a>
+                      )}
+                      {currentMovie.instagramUrl && (
+                        <a
+                          href={currentMovie.instagramUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-12 h-12 flex items-center justify-center bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full border border-white/20 transition-all transform hover:scale-110"
+                          aria-label="Follow on Instagram"
+                        >
+                          <FiInstagram className="w-5 h-5 text-white" />
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </motion.div>
               </div>
             </div>

@@ -7,9 +7,23 @@ export interface Movie {
   thumbnail: string;
   description: string;
   trailerUrl?: string;
+  tiktokUrl?: string;
+  instagramUrl?: string;
 }
 
 export const movies: Movie[] = [
+  {
+    id: 2,
+    title: "Viral Gorkhe",
+    year: "2024",
+    category: "Drama",
+    director: "AKB Pictures",
+    thumbnail: "/images/viral-gorkhe.png",
+    description: "A simple villager from Gorkha battles doubts, rivalry and the harsh reality of social media in his quest to go viral.",
+    trailerUrl: "https://www.youtube.com/watch?v=sDiXd22yBhY",
+    tiktokUrl: "https://www.tiktok.com/@viral_gorkhey",
+    instagramUrl: "https://www.instagram.com/viralgorkheyfilm/",
+  },
   {
     id: 1,
     title: "Naka",
@@ -19,16 +33,6 @@ export const movies: Movie[] = [
     thumbnail: "/images/naka-poster.jpeg",
     description: "An intense thriller that takes you through the checkpoints of life, where every decision matters and every moment counts.",
     trailerUrl: "https://www.youtube.com/watch?v=u2gbhTlEbAE",
-  },
-  {
-    id: 2,
-    title: "Viral Gorkhe",
-    year: "2024",
-    category: "Drama",
-    director: "AKB Pictures",
-    thumbnail: "/images/viral-gorkhe.png",
-    description: "A powerful story of fame, ambition, and the price of viral success in the modern digital age.",
-    trailerUrl: "https://www.youtube.com/watch?v=mwTW5jP9wxg",
   },
   {
     id: 3,
