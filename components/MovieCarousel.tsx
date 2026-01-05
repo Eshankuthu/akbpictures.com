@@ -78,8 +78,12 @@ export default function MovieCarousel({ movies }: MovieCarouselProps) {
                   transition={{ delay: 0.4, duration: 0.6 }}
                   className="flex items-center gap-4 mb-6 text-gray-300"
                 >
-                  <span className="text-lg">{currentMovie.year}</span>
-                  <span className="w-1 h-1 bg-amber-500 rounded-full" />
+                  {currentMovie.year && (
+                    <>
+                      <span className="text-lg">{currentMovie.year}</span>
+                      <span className="w-1 h-1 bg-amber-500 rounded-full" />
+                    </>
+                  )}
                   <span className="text-lg">Dir. {currentMovie.director}</span>
                 </motion.div>
 
@@ -109,7 +113,7 @@ export default function MovieCarousel({ movies }: MovieCarouselProps) {
                       Watch Trailer
                     </a>
                   )}
-                  {currentMovie.title === "Viral Gorkhe" ? (
+                  {currentMovie.title === "Viral Gorkhey" ? (
                     <Link
                       href="/viral-gorkhe"
                       className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg backdrop-blur-sm border border-white/20 transition-all inline-block"

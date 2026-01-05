@@ -10,13 +10,13 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const galleryImages = [
-  { id: 7, src: "/images/viral-gorkhe-7.jpeg", alt: "Viral Gorkhe Scene 7" },
-  { id: 6, src: "/images/viral-gorkhe-6.jpeg", alt: "Viral Gorkhe Scene 6" },
-  { id: 5, src: "/images/viral-gorkhe-5.jpeg", alt: "Viral Gorkhe Scene 5" },
-  { id: 4, src: "/images/viral-gorkhe-4.jpeg", alt: "Viral Gorkhe Scene 4" },
-  { id: 3, src: "/images/viral-gorkhe-3.jpeg", alt: "Viral Gorkhe Scene 3" },
-  { id: 2, src: "/images/viral-gorkhe-2.jpeg", alt: "Viral Gorkhe Scene 2" },
-  { id: 1, src: "/images/viral-gorkhe-1.jpeg", alt: "Viral Gorkhe Scene 1" },
+  { id: 7, src: "/images/viral-gorkhe-7.jpeg", alt: "Viral Gorkhey Scene 7" },
+  { id: 6, src: "/images/viral-gorkhe-6.jpeg", alt: "Viral Gorkhey Scene 6" },
+  { id: 5, src: "/images/viral-gorkhe-5.jpeg", alt: "Viral Gorkhey Scene 5" },
+  { id: 4, src: "/images/viral-gorkhe-4.jpeg", alt: "Viral Gorkhey Scene 4" },
+  { id: 3, src: "/images/viral-gorkhe-3.jpeg", alt: "Viral Gorkhey Scene 3" },
+  { id: 2, src: "/images/viral-gorkhe-2.jpeg", alt: "Viral Gorkhey Scene 2" },
+  { id: 1, src: "/images/viral-gorkhe-1.jpeg", alt: "Viral Gorkhey Scene 1" },
 ];
 
 export default function ViralGorkhePage() {
@@ -31,7 +31,7 @@ export default function ViralGorkhePage() {
         <div className="absolute inset-0">
           <Image
             src="/images/viral-gorkhe.png"
-            alt="Viral Gorkhe"
+            alt="Viral Gorkhey"
             fill
             className="object-cover"
             priority
@@ -61,13 +61,13 @@ export default function ViralGorkhePage() {
               </span>
               
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 text-white">
-                Viral Gorkhe
+                Viral Gorkhey
               </h1>
               
               <div className="flex items-center gap-4 mb-6 text-gray-300">
-                <span className="text-lg">2024</span>
+                <span className="text-lg">2026</span>
                 <span className="w-1 h-1 bg-amber-500 rounded-full" />
-                <span className="text-lg">Dir. AKB Pictures</span>
+                <span className="text-lg">Dir. Nigam shrestha</span>
               </div>
               
               <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
@@ -122,7 +122,7 @@ export default function ViralGorkhePage() {
               Gallery
             </h2>
             <p className="text-gray-400 text-lg">
-              Behind the scenes and stills from Viral Gorkhe
+              Behind the scenes and stills from Viral Gorkhey
             </p>
           </motion.div>
 
